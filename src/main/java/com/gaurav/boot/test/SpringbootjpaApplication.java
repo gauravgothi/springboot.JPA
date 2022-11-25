@@ -28,13 +28,13 @@ public class SpringbootjpaApplication {
 
 
 
-		List<User> users = List.of(user2,user3);
-		//Iterable<User> result = userRepository.saveAll(users);
-		List<User> user = userRepository.findByName("Lakita");
-		user.forEach(e -> System.out.println(e));
-
-		List<User> user4 = userRepository.findByNameAndId("Lakita",4);
-		System.out.println(user4);
+//		List<User> users = List.of(user2,user3);
+//		//Iterable<User> result = userRepository.saveAll(users);
+//		List<User> user = userRepository.findByName("Lakita");
+//		user.forEach(e -> System.out.println(e));
+//
+//		List<User> user4 = userRepository.findByNameAndId("Lakita",4);    //Derived Query
+//		System.out.println(user4);
 //		result.forEach(user -> {
 //			System.out.println(user);
 //		});
@@ -45,6 +45,14 @@ public class SpringbootjpaApplication {
 		//userRepository.deleteById(1);
 		//userRepository.save(user);
 		//System.out.println(user);
+
+
+
+		//JPQL Query implementation
+		List<User> users = userRepository.getAllUser();
+		users.forEach(user -> {
+			System.out.println(user);
+		});
 	}
 
 }
